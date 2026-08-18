@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="game-shell">
+      <h1>Tic-Tac-Toe</h1>
+
+      <section id="mode-selection" class="screen" aria-labelledby="mode-heading">
+        <h2 id="mode-heading">Choose a game</h2>
+        <div class="mode-actions">
+          <button type="button" data-mode="local">Local Two Player</button>
+          <button type="button" data-mode="computer">Play Computer</button>
+        </div>
+      </section>
+
+      <section id="game" class="screen" aria-labelledby="status" hidden>
+        <p id="mode-label" class="mode-label"></p>
+        <h2 id="status" role="status" aria-live="polite">X's turn</h2>
+
+        <div class="game-board" aria-label="Tic-tac-toe board">
+          <button type="button" class="cell" data-cell-index="0" aria-label="Cell 1"></button>
+          <button type="button" class="cell" data-cell-index="1" aria-label="Cell 2"></button>
+          <button type="button" class="cell" data-cell-index="2" aria-label="Cell 3"></button>
+          <button type="button" class="cell" data-cell-index="3" aria-label="Cell 4"></button>
+          <button type="button" class="cell" data-cell-index="4" aria-label="Cell 5"></button>
+          <button type="button" class="cell" data-cell-index="5" aria-label="Cell 6"></button>
+          <button type="button" class="cell" data-cell-index="6" aria-label="Cell 7"></button>
+          <button type="button" class="cell" data-cell-index="7" aria-label="Cell 8"></button>
+          <button type="button" class="cell" data-cell-index="8" aria-label="Cell 9"></button>
+        </div>
+
+        <button id="restart" type="button" class="restart">Restart</button>
+      </section>
+    </main>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
