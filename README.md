@@ -2,6 +2,12 @@
 
 A dependency-free browser game for local two-player matches or games against the computer. It combines complete tic-tac-toe rules and series scoring with a responsive Neon Arcade interface, Retro CRT effects, synthesized sound, and accessible controls.
 
+## Screenshots
+
+| Game setup | Winning round |
+| --- | --- |
+| ![Neon Arcade Tic-Tac-Toe setup screen](assets/screenshots/game-setup.png) | ![Completed Tic-Tac-Toe round with Player X winning](assets/screenshots/game-win.png) |
+
 ## Features
 
 - Local two-player and player-versus-computer modes
@@ -67,6 +73,7 @@ The tests cover game rules, all eight winning lines, draws, scoring, round reset
 
 ```text
 .
+├── assets/screenshots/     # Game setup and completed-round screenshots
 ├── index.html              # Semantic game interface and controls
 ├── style.css               # Neon Arcade theme, layout, and motion
 ├── script.js               # Game state, rules, computer play, rendering, and audio
