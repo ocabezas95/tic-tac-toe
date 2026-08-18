@@ -7,35 +7,78 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <main class="game-shell">
-      <h1>Tic-Tac-Toe</h1>
+    <main class="game-shell arcade-cabinet">
+      <header class="cabinet-header">
+        <h1>Tic-Tac-Toe</h1>
+        <button
+          id="sound-toggle"
+          type="button"
+          aria-pressed="true"
+          aria-label="Mute sound"
+          data-sound-enabled="true"
+        >Sound: On</button>
+      </header>
 
-      <section id="mode-selection" class="screen" aria-labelledby="mode-heading">
-        <h2 id="mode-heading">Choose a game</h2>
-        <div class="mode-actions">
-          <button type="button" data-mode="local">Local Two Player</button>
-          <button type="button" data-mode="computer">Play Computer</button>
-        </div>
-      </section>
+      <div class="crt-screen">
+        <section id="mode-selection" class="screen" aria-labelledby="mode-heading">
+          <h2 id="mode-heading">Choose a game</h2>
+          <div id="mode-actions" class="mode-actions">
+            <button type="button" data-mode="local">Local Two Player</button>
+            <button type="button" data-mode="computer">Play Computer</button>
+          </div>
+          <div id="difficulty-selection" class="mode-actions" hidden>
+            <button type="button" data-difficulty="easy">Easy</button>
+            <button type="button" data-difficulty="medium">Medium</button>
+            <button type="button" data-difficulty="hard">Hard</button>
+          </div>
+          <div id="mark-selection" class="mode-actions" hidden>
+            <button type="button" data-mark="X">Play as X</button>
+            <button type="button" data-mark="O">Play as O</button>
+          </div>
+        </section>
 
-      <section id="game" class="screen" aria-labelledby="status" hidden>
-        <p id="mode-label" class="mode-label"></p>
-        <h2 id="status" role="status" aria-live="polite">X's turn</h2>
+        <section id="game" class="screen" aria-labelledby="status" hidden>
+          <section class="score-panel" aria-label="Series score">
+            <div class="scoreboard">
+              <p class="score-card">
+                <span id="score-x-label">Player X</span>
+                <strong id="score-x">0</strong>
+              </p>
+              <p class="score-card">
+                <span id="score-o-label">Player O</span>
+                <strong id="score-o">0</strong>
+              </p>
+            </div>
+          </section>
 
-        <div class="game-board" aria-label="Tic-tac-toe board">
-          <button type="button" class="cell" data-cell-index="0" aria-label="Cell 1"></button>
-          <button type="button" class="cell" data-cell-index="1" aria-label="Cell 2"></button>
-          <button type="button" class="cell" data-cell-index="2" aria-label="Cell 3"></button>
-          <button type="button" class="cell" data-cell-index="3" aria-label="Cell 4"></button>
-          <button type="button" class="cell" data-cell-index="4" aria-label="Cell 5"></button>
-          <button type="button" class="cell" data-cell-index="5" aria-label="Cell 6"></button>
-          <button type="button" class="cell" data-cell-index="6" aria-label="Cell 7"></button>
-          <button type="button" class="cell" data-cell-index="7" aria-label="Cell 8"></button>
-          <button type="button" class="cell" data-cell-index="8" aria-label="Cell 9"></button>
-        </div>
+          <section class="status-panel" aria-label="Game status">
+            <p id="mode-label" class="mode-label"></p>
+            <h2 id="status" role="status" aria-live="polite">Player X's turn (X)</h2>
+          </section>
 
-        <button id="restart" type="button" class="restart">Restart</button>
-      </section>
+          <section class="board-panel" aria-label="Game board">
+            <div class="game-board" aria-label="Tic-tac-toe board">
+              <button type="button" class="cell" data-cell-index="0" aria-label="Cell 1"></button>
+              <button type="button" class="cell" data-cell-index="1" aria-label="Cell 2"></button>
+              <button type="button" class="cell" data-cell-index="2" aria-label="Cell 3"></button>
+              <button type="button" class="cell" data-cell-index="3" aria-label="Cell 4"></button>
+              <button type="button" class="cell" data-cell-index="4" aria-label="Cell 5"></button>
+              <button type="button" class="cell" data-cell-index="5" aria-label="Cell 6"></button>
+              <button type="button" class="cell" data-cell-index="6" aria-label="Cell 7"></button>
+              <button type="button" class="cell" data-cell-index="7" aria-label="Cell 8"></button>
+              <button type="button" class="cell" data-cell-index="8" aria-label="Cell 9"></button>
+            </div>
+          </section>
+
+          <section class="control-panel" aria-label="Game controls">
+            <button id="restart" type="button" class="restart">Restart</button>
+            <div id="round-actions" class="round-actions" hidden>
+              <button id="continue" type="button">Continue</button>
+              <button id="new-game" type="button" class="secondary-action">New Game</button>
+            </div>
+          </section>
+        </section>
+      </div>
     </main>
 
     <script type="module" src="script.js"></script>
